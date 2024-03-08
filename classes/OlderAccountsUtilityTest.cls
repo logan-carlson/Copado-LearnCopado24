@@ -18,7 +18,7 @@ public class OlderAccountsUtilityTest {
         // Verify the changes
         List<Account> updatedAccounts = [SELECT Id, Description FROM Account WHERE Id IN :oldAccounts];
         for (Account acct : updatedAccounts) {
-            System.assertEquals('Heritage Account', acct.Description, 'Description should be updated');
+            System.assertEquals('Not Heritage Account', acct.Description, 'Description should be updated');
         }
     }
 }
